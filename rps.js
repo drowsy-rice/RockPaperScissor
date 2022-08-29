@@ -11,24 +11,31 @@ function getComputerChoice(){
         return "scissors";
 }
 
-function playGame(playerSelection,computerSelection){
-    let computerSelection=getComputerChoice
-    let playerSelection=playerSelection.lowerCase
+const getComputerChoice()=computerSelection;
+const playerSelection.lowerCase()=playerSelection;
 
+function playRound(playerSelection,computerSelection){
+ 
     if (playerSelection)==(computerSelection){
         return "It's a tie?!";
     }else if (playerSelection)=="rock" && (computerSelection)=="paper"{
-        return "You lost! Paper beats rock, IDIOT.";
+        return "You lost! Paper beats rock, YOU OAF.";
     }else if (playerSelection)=="rock" && (computerSelection)=="scissors"{
         return "You won! Rock beats scissors.";
     }else if (playerSelection)=="paper" && (computerSelection)=="rock"{
         return "You won! Paper beats rock.";
     }else if (playerSelection)=="paper" && (computerSelection)=="scissors"{
-            return "You lost! Scissors beats paper, FOOL.";
+        return "You lost! Scissors beats paper, FOOL.";
     }else if (playerSelection)=="scissors" && (computerSelection)=="rock"{
-                return "You lost! Rock beats paper, OOF.";
+        return "You lost! Rock beats paper, GET GUD LOL.";
     }else if (playerSelection)=="scissors" && (computerSelection)=="paper"{
         return "You won! Scissors beats paper.";
     }else
         return "That's not how you play the game!!!";
+}
+
+function playGame(){
+    playerSelection=prompt ("Paper, scissors, or rock?");
+    playRound(playerSelection,computerSelection);
+    //repeat for five rounds and report a winner and loser at the end//
 }
