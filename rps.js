@@ -40,13 +40,13 @@ function playGame(){
     while (i<5){
         const computerSelection=getComputerChoice();
         const playerSelection=prompt ("Paper, scissors, or rock?").toLowerCase();
-        playRound(playerSelection,computerSelection);
+        console.log (playRound(playerSelection,computerSelection));
         i++;
     }
     if (playerScore>computerScore){
-        return "YOU WIN!!!!!!!";
+        playerScore=0; computerScore=0; i=0; return "YOU WIN!!!!!!!";
     }else if (playerScore<computerScore){
-        return "LOOOSERRR";
+        playerScore=0; computerScore=0; i=0; return "LOOOSERRR";
     }else 
-        return "It's a tie!";
+        playerScore=0; computerScore=0; i=0; return "It's a tie!";
 }
