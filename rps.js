@@ -20,17 +20,17 @@ function playRound(playerSelection,computerSelection){
     if (playerSelection==computerSelection){
         return "It's a tie?!";
     }else if (playerSelection=="rock" && computerSelection=="paper"){
-        computerScore=computerScore+1; return "You lost! Paper beats rock, YOU OAF.";
+        computerScore++; return "You lost! Paper beats rock, YOU OAF.";
     }else if (playerSelection=="rock" && computerSelection=="scissors"){
-        playerScore=playerScore+1; return "You won! Rock beats scissors.";
+        playerScore++; return "You won! Rock beats scissors.";
     }else if (playerSelection=="paper" && computerSelection=="rock"){
-        playerScore=playerScore+1; return "You won! Paper beats rock.";
+        playerScore++; return "You won! Paper beats rock.";
     }else if (playerSelection=="paper" && computerSelection=="scissors"){
-        computerScore=computerScore+1; return "You lost! Scissors beats paper, FOOL.";
+        computerScore++; return "You lost! Scissors beats paper, FOOL.";
     }else if (playerSelection=="scissors" && computerSelection=="rock"){
-        computerScore=computerScore+1; return "You lost! Rock beats paper, GET GUD LOL.";
+        computerScore++; return "You lost! Rock beats paper, GET GUD LOL.";
     }else if (playerSelection=="scissors" && computerSelection=="paper"){
-        playerScore=playerScore+1; return "You won! Scissors beats paper.";
+        playerScore++; return "You won! Scissors beats paper.";
     }else
         i=i-1; return "That's not how you play the game!!!";
         
