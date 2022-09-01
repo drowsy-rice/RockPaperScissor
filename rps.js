@@ -11,31 +11,42 @@ function getComputerChoice(){
         return "scissors";
 }
 
-const computerSelection=getComputerChoice();
-const playerSelection=playerSelection.lowerCase();
+let computerScore=0;
+let playerScore=0;
+let i=0;
 
 function playRound(playerSelection,computerSelection){
  
     if (playerSelection==computerSelection){
         return "It's a tie?!";
     }else if (playerSelection=="rock" && computerSelection=="paper"){
-        return "You lost! Paper beats rock, YOU OAF.";
+        computerScore=computerScore+1; return "You lost! Paper beats rock, YOU OAF.";
     }else if (playerSelection=="rock" && computerSelection=="scissors"){
-        return "You won! Rock beats scissors.";
+        playerScore=playerScore+1; return "You won! Rock beats scissors.";
     }else if (playerSelection=="paper" && computerSelection=="rock"){
-        return "You won! Paper beats rock.";
+        playerScore=playerScore+1; return "You won! Paper beats rock.";
     }else if (playerSelection=="paper" && computerSelection=="scissors"){
-        return "You lost! Scissors beats paper, FOOL.";
+        computerScore=computerScore+1; return "You lost! Scissors beats paper, FOOL.";
     }else if (playerSelection=="scissors" && computerSelection=="rock"){
-        return "You lost! Rock beats paper, GET GUD LOL.";
+        computerScore=computerScore+1; return "You lost! Rock beats paper, GET GUD LOL.";
     }else if (playerSelection=="scissors" && computerSelection=="paper"){
-        return "You won! Scissors beats paper.";
+        playerScore=playerScore+1; return "You won! Scissors beats paper.";
     }else
-        return "That's not how you play the game!!!";
+        i=i-1; return "That's not how you play the game!!!";
+        
 }
 
 function playGame(){
-    playerSelection=prompt ("Paper, scissors, or rock?");
-    playRound(playerSelection,computerSelection);
-    //repeat for five rounds and report a winner and loser at the end//
+    while (i<5){
+        const computerSelection=getComputerChoice();
+        const playerSelection=prompt ("Paper, scissors, or rock?").toLowerCase();
+        playRound(playerSelection,computerSelection);
+        i++;
+    }
+    if (playerScore>computerScore){
+        return "YOU WIN!!!!!!!";
+    }else if (playerScore<computerScore){
+        return "LOOOSERRR";
+    }else 
+        return "It's a tie!";
 }
