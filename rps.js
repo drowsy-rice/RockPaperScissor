@@ -11,24 +11,24 @@ function getComputerChoice(){
         return "scissors";
 }
 
-const getComputerChoice()=computerSelection;
-const playerSelection.lowerCase()=playerSelection;
+const computerSelection=getComputerChoice();
+const playerSelection=playerSelection.lowerCase();
 
 function playRound(playerSelection,computerSelection){
  
-    if (playerSelection)==(computerSelection){
+    if (playerSelection==computerSelection){
         return "It's a tie?!";
-    }else if (playerSelection)=="rock" && (computerSelection)=="paper"{
+    }else if (playerSelection=="rock" && computerSelection=="paper"){
         return "You lost! Paper beats rock, YOU OAF.";
-    }else if (playerSelection)=="rock" && (computerSelection)=="scissors"{
+    }else if (playerSelection=="rock" && computerSelection=="scissors"){
         return "You won! Rock beats scissors.";
-    }else if (playerSelection)=="paper" && (computerSelection)=="rock"{
+    }else if (playerSelection=="paper" && computerSelection=="rock"){
         return "You won! Paper beats rock.";
-    }else if (playerSelection)=="paper" && (computerSelection)=="scissors"{
+    }else if (playerSelection=="paper" && computerSelection=="scissors"){
         return "You lost! Scissors beats paper, FOOL.";
-    }else if (playerSelection)=="scissors" && (computerSelection)=="rock"{
+    }else if (playerSelection=="scissors" && computerSelection=="rock"){
         return "You lost! Rock beats paper, GET GUD LOL.";
-    }else if (playerSelection)=="scissors" && (computerSelection)=="paper"{
+    }else if (playerSelection=="scissors" && computerSelection=="paper"){
         return "You won! Scissors beats paper.";
     }else
         return "That's not how you play the game!!!";
