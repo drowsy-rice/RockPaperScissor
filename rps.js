@@ -34,14 +34,12 @@ function getComputerChoice(){
         return "paper";
     }else
         return "scissors";
-}
+};
 
 let computerScore=0;
 let playerScore=0;
 
-
 function playRound(playerSelection,computerSelection){
- 
     if (playerSelection==computerSelection){
         alert("It's a tie?!");
     }else if (playerSelection=="rock" && computerSelection=="paper"){
@@ -56,12 +54,25 @@ function playRound(playerSelection,computerSelection){
         computerScore++; alert("You lost! Rock beats paper, GET GUD LOL.");
     }else if (playerSelection=="scissors" && computerSelection=="paper"){
         playerScore++; alert("You won! Scissors beats paper.");
-    }};
+    }
+    h1.textContent = `COMPUTER SCORE: ${computerScore}`;
+    h2.textContent = `PLAYER SCORE: ${playerScore}`;
+};
 
 function gameScores(){
-    
     if (playerScore==5){
         playerScore=0; computerScore=0; alert("YOU WIN!!!!!!!");
     }else if (computerScore==5){
-        playerScore=0; computerScore=0; alert("LOOOSERRR");
-    }};
+        playerScore=0; computerScore=0; alert("YOU HAVE FAILED EVERYONE, TRY AGAIN!");
+}};
+
+
+const h1=document.createElement('h1');
+h1.textContent=`COMPUTER SCORE: ${computerScore}`;
+h1.style.border='thick solid red';
+scores.appendChild(h1);
+
+const h2=document.createElement('h1');
+h2.textContent=`PLAYER SCORE: ${playerScore}`;
+h2.style.border='thick solid green';
+scores.appendChild(h2);
