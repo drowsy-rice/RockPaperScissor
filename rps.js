@@ -36,7 +36,6 @@ function getComputerChoice(){
 
 let computerScore=0;
 let playerScore=0;
-let i=0;
 
 
 function playRound(playerSelection,computerSelection){
@@ -55,9 +54,7 @@ function playRound(playerSelection,computerSelection){
         computerScore++; alert("You lost! Rock beats paper, GET GUD LOL.");
     }else if (playerSelection=="scissors" && computerSelection=="paper"){
         playerScore++; alert("You won! Scissors beats paper.");
-    }else
-        i=i-1; alert("That's not how you play the game!!!");
-}
+    }};
 
 /*
     if (playerScore=5){
