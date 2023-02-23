@@ -3,6 +3,7 @@ rockButton.addEventListener('click',function(){
     let playerSelection="rock";
     let computerSelection=getComputerChoice();
     playRound(playerSelection,computerSelection);
+    gameScores();
 });
 
 const paperButton=document.querySelector('#paperButton');
@@ -10,6 +11,7 @@ paperButton.addEventListener('click',function(){
     let playerSelection="paper";
     let computerSelection=getComputerChoice();
     playRound(playerSelection,computerSelection);
+    gameScores();
 });
 
 const scissorsButton=document.querySelector('#scissorsButton');
@@ -17,8 +19,8 @@ scissorsButton.addEventListener('click',function(){
     let playerSelection="scissors";
     let computerSelection=getComputerChoice();
     playRound(playerSelection,computerSelection);
+    gameScores();
 });
-
 
 
 function getComputerChoice(){
@@ -56,11 +58,10 @@ function playRound(playerSelection,computerSelection){
         playerScore++; alert("You won! Scissors beats paper.");
     }};
 
-/*
-    if (playerScore=5){
-        playerScore=0; computerScore=0; i=0; alert "YOU WIN!!!!!!!";
-    }else if (computerScore=5){
-        playerScore=0; computerScore=0; i=0; alert "LOOOSERRR";
-    }else 
-        playerScore=0; computerScore=0; i=0; alert "It's a tie!";
-}*/
+function gameScores(){
+    
+    if (playerScore==5){
+        playerScore=0; computerScore=0; alert("YOU WIN!!!!!!!");
+    }else if (computerScore==5){
+        playerScore=0; computerScore=0; alert("LOOOSERRR");
+    }};
