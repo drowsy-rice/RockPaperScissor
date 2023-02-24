@@ -41,19 +41,19 @@ let playerScore=0;
 
 function playRound(playerSelection,computerSelection){
     if (playerSelection==computerSelection){
-        alert("It's a tie?!");
+        h3.textContent=("It's a tie?!");
     }else if (playerSelection=="rock" && computerSelection=="paper"){
-        computerScore++; alert("You lost! Paper beats rock, YOU OAF.");
+        computerScore++; h3.textContent=("You lost! Paper beats rock, YOU OAF.");
     }else if (playerSelection=="rock" && computerSelection=="scissors"){
-        playerScore++; alert("You won! Rock beats scissors.");
+        playerScore++; h3.textContent=("You won! Rock beats scissors.");
     }else if (playerSelection=="paper" && computerSelection=="rock"){
-        playerScore++; alert("You won! Paper beats rock.");
+        playerScore++; h3.textContent=("You won! Paper beats rock.");
     }else if (playerSelection=="paper" && computerSelection=="scissors"){
-        computerScore++; alert("You lost! Scissors beats paper, FOOL.");
+        computerScore++; h3.textContent=("You lost! Scissors beats paper, FOOL.");
     }else if (playerSelection=="scissors" && computerSelection=="rock"){
-        computerScore++; alert("You lost! Rock beats paper, GET GUD LOL.");
+        computerScore++; h3.textContent=("You lost! Rock beats paper, GET GUD LOL.");
     }else if (playerSelection=="scissors" && computerSelection=="paper"){
-        playerScore++; alert("You won! Scissors beats paper.");
+        playerScore++; h3.textContent=("You won! Scissors beats paper.");
     }
     h1.textContent = `COMPUTER SCORE: ${computerScore}`;
     h2.textContent = `PLAYER SCORE: ${playerScore}`;
@@ -66,7 +66,6 @@ function gameScores(){
         playerScore=0; computerScore=0; alert("YOU HAVE FAILED EVERYONE, TRY AGAIN!");
 }};
 
-
 const h1=document.createElement('h1');
 h1.textContent=`COMPUTER SCORE: ${computerScore}`;
 h1.style.border='thick solid red';
@@ -76,3 +75,7 @@ const h2=document.createElement('h1');
 h2.textContent=`PLAYER SCORE: ${playerScore}`;
 h2.style.border='thick solid green';
 scores.appendChild(h2);
+
+const h3=document.createElement('h1');
+h3.style.border='thick solid black';
+scores.appendChild(h3);
