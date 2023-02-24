@@ -3,7 +3,7 @@ rockButton.addEventListener('click',function(){
     let playerSelection="rock";
     let computerSelection=getComputerChoice();
     playRound(playerSelection,computerSelection);
-    gameScores();
+    finalResults();
 });
 
 const paperButton=document.querySelector('#paperButton');
@@ -11,7 +11,7 @@ paperButton.addEventListener('click',function(){
     let playerSelection="paper";
     let computerSelection=getComputerChoice();
     playRound(playerSelection,computerSelection);
-    gameScores();
+    finalResults();
 });
 
 const scissorsButton=document.querySelector('#scissorsButton');
@@ -19,9 +19,17 @@ scissorsButton.addEventListener('click',function(){
     let playerSelection="scissors";
     let computerSelection=getComputerChoice();
     playRound(playerSelection,computerSelection);
-    gameScores();
+    finalResults();
 });
 
+const resetButton=document.querySelector('#resetButton');
+    resetButton.addEventListener('click', function(){
+        playerScore=0; computerScore=0;
+        h1.textContent = `COMPUTER SCORE: ${computerScore}`;
+        h2.textContent = `PLAYER SCORE: ${playerScore}`;
+        h3.textContent="Choose Wisely";
+        document.querySelector('#starters').style.visibility="visible";
+}) 
 
 function getComputerChoice(){
     let min=1
@@ -59,11 +67,11 @@ function playRound(playerSelection,computerSelection){
     h2.textContent = `PLAYER SCORE: ${playerScore}`;
 };
 
-function gameScores(){
+function finalResults(){
     if (playerScore==5){
-        playerScore=0; computerScore=0; alert("YOU WIN!!!!!!!");
+        h3.textContent=("YOU WIN!!!!!!!"); document.querySelector('#starters').style.visibility="hidden";
     }else if (computerScore==5){
-        playerScore=0; computerScore=0; alert("YOU HAVE FAILED EVERYONE, TRY AGAIN!");
+        h3.textContent=("YOU HAVE FAILED EVERYONE, TRY AGAIN!"); document.querySelector('#starters').style.visibility="hidden";
 }};
 
 const h1=document.createElement('h1');
@@ -77,5 +85,6 @@ h2.style.border='thick solid green';
 scores.appendChild(h2);
 
 const h3=document.createElement('h1');
+h3.textContent="Choose Wisely"
 h3.style.border='thick solid black';
 scores.appendChild(h3);
