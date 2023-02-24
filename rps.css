@@ -1,0 +1,71 @@
+body{
+    margin: 30px;
+    background-image: url(rps_photos/pokeballpattern.png);
+    background-size: 200px;
+    align-items: center;
+    height: 100vh;
+}
+
+#starters{
+    display: flex;
+    justify-content: space-evenly;
+    margin:auto;
+    margin-top: 80px;
+}
+
+    #fireButton{
+        background: url(rps_photos/charizard.png);
+        background-repeat: no-repeat;
+        height: 350px;
+        width: 350px;
+        object-fit: contain;
+        border: none;
+    }
+
+    #waterButton{
+        background: url(rps_photos/blastoise.png);
+        background-repeat: no-repeat;
+        height: 350px;
+        width: 350px;
+        object-fit: contain;
+        border: none;
+    }
+
+    #grassButton{
+        background: url(rps_photos/venasaur.png);
+        background-repeat: no-repeat;
+        height: 350px;
+        width: 350px;
+        object-fit: contain;
+        border: none;
+    }
+
+#scores{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+
+}
+
+#messages{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+    border: thick blue solid;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-shrink: 1;
+    text-align: center;
+}
+
+#resetButton{
+    display:flex;
+    justify-content: space-around;
+    margin: auto;
+    padding: 10px;
+    background-color: yellow;
+    font-size: 25px;
+    font-style: oblique;
+    border: thick rgb(219, 99, 0) solid;
+ }
