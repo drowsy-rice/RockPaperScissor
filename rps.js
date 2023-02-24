@@ -27,8 +27,10 @@ const resetButton=document.querySelector('#resetButton');
         playerScore=5; computerScore=5;
         h1.textContent = `ROCKET GRUNT'S HP: ${computerScore}`;
         h2.textContent = `YOUR HP: ${playerScore}`;
-        document.querySelector('#messages').textContent="Choose Wisely";
-        document.querySelector('#starters').style.visibility="visible";
+        document.querySelector('#messages').textContent="Team Rocket Grunt Challenges You to a Pokemon Battle!";
+        document.querySelector('#fireButton').style.backgroundImage="url(rps_photos/charizard.png)";
+        document.querySelector('#waterButton').style.backgroundImage="url(rps_photos/blastoise.png)";
+        document.querySelector('#grassButton').style.backgroundImage="url(rps_photos/venasaur.png)";
 }); 
 
 function getComputerChoice(){
@@ -48,19 +50,19 @@ let computerScore=5;
 let playerScore=5;
 
 function playRound(playerSelection,computerSelection){
-    if (playerSelection==computerSelection){
+    if (playerSelection==computerSelection && (playerScore && computerScore)>0){
         messages.textContent=("Stop copying me and pick a different Pokemon you twerp!");
-    }else if (playerSelection=="fire" && computerSelection=="water"){
+    }else if (playerSelection=="fire" && computerSelection=="water" && (playerScore && computerScore)>0){
         computerScore--; messages.textContent=("Ha! I win this round! Water beats fire, YOU OAF!");
-    }else if (playerSelection=="fire" && computerSelection=="grass"){
+    }else if (playerSelection=="fire" && computerSelection=="grass" && (playerScore && computerScore)>0){
         playerScore--; messages.textContent=("You got lucky that time! Fire beats grass.");
-    }else if (playerSelection=="water" && computerSelection=="rock"){
+    }else if (playerSelection=="water" && computerSelection=="rock" && (playerScore && computerScore)>0){
         playerScore--; messages.textContent=("You won that?? Water beats fire.");
-    }else if (playerSelection=="water" && computerSelection=="grass"){
+    }else if (playerSelection=="water" && computerSelection=="grass" && (playerScore && computerScore)>0){
         computerScore--; messages.textContent=("Of course you lost that! Grass beats water, FOOL.");
-    }else if (playerSelection=="grass" && computerSelection=="fire"){
+    }else if (playerSelection=="grass" && computerSelection=="fire" && (playerScore && computerScore)>0){
         computerScore--; messages.textContent=("Don't you know fire beats grass?? GET GUD LOL.");
-    }else if (playerSelection=="grass" && computerSelection=="water"){
+    }else if (playerSelection=="grass" && computerSelection=="water" && (playerScore && computerScore)>0){
         playerScore--; messages.textContent=("I let you win that! Grass beats water.");
     }
     h1.textContent = `ROCKET GRUNT'S HP: ${computerScore}`;
@@ -69,9 +71,15 @@ function playRound(playerSelection,computerSelection){
 
 function finalResults(){
     if (playerScore==0){
-        messages.textContent="HAHAHA! TEAM ROCKET IS VICTORIOUS!"; document.querySelector('#starters').style.visibility="hidden";
+        messages.textContent="HAHAHA! TEAM ROCKET IS VICTORIOUS!"; 
+        document.querySelector('#fireButton').style.backgroundImage="url(rps_photos/pokeball.png)";
+        document.querySelector('#waterButton').style.backgroundImage="url(rps_photos/pokeball.png)";
+        document.querySelector('#grassButton').style.backgroundImage="url(rps_photos/pokeball.png)";
     }else if (computerScore==0){
-        messages.textContent="You defeated me?? I'm telling Giovanni about this you brat..."; document.querySelector('#starters').style.visibility="hidden";
+        messages.textContent="You defeated me?? I'm telling Giovanni about this you brat..."; 
+        document.querySelector('#fireButton').style.backgroundImage="url(rps_photos/pokeball.png)";
+        document.querySelector('#waterButton').style.backgroundImage="url(rps_photos/pokeball.png)";
+        document.querySelector('#grassButton').style.backgroundImage="url(rps_photos/pokeball.png)";
 }};
 
 const h1=document.createElement('h1');
@@ -85,4 +93,3 @@ h2.textContent=`YOUR HP: ${playerScore}`;
 h2.style.border='thick solid green';
 h2.style.backgroundColor='white';
 scores.appendChild(h2);
-

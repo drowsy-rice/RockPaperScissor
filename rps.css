@@ -1,16 +1,20 @@
 body{
-    margin: 30px;
-    background-image: url(rps_photos/pokeballpattern.png);
+    background-image: url(rps_photos/gray_pokeballs.gif);
     background-size: 200px;
-    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    width: 94%;
+    min-height: 100vh;
     height: 100vh;
+    padding: 50px;
+    
+    
 }
 
 #starters{
     display: flex;
     justify-content: space-evenly;
     margin:auto;
-    margin-top: 80px;
 }
 
     #fireButton{
@@ -21,7 +25,14 @@ body{
         object-fit: contain;
         border: none;
     }
-
+             
+        #fireButton:hover{
+            border:10px dashed yellow;
+        }
+        #fireButton:active{
+            background-color: #cf6d6d;
+            transform: translateY(4px);
+        }
     #waterButton{
         background: url(rps_photos/blastoise.png);
         background-repeat: no-repeat;
@@ -30,7 +41,13 @@ body{
         object-fit: contain;
         border: none;
     }
-
+        #waterButton:hover{
+            border:10px dashed yellow;
+        }
+        #waterButton:active{
+            background-color: #6d94cf;
+            transform: translateY(4px);
+        }
     #grassButton{
         background: url(rps_photos/venasaur.png);
         background-repeat: no-repeat;
@@ -39,24 +56,32 @@ body{
         object-fit: contain;
         border: none;
     }
+        #grassButton:hover{
+            border:10px dashed yellow;
+        }
+        #grassButton:active{
+            background-color: #7dcf6d;
+            transform: translateY(4px);
+        }
 
 #scores{
     display: flex;
     justify-content: space-evenly;
     margin: auto;
-
 }
-
+ 
 #messages{
     display: flex;
     justify-content: space-evenly;
     font-size: 30px;
     border: thick blue solid;
+    border-radius: 4px;
     background-color: white;
     margin-top: 20px;
     margin-bottom: 20px;
     flex-shrink: 1;
     text-align: center;
+    width: auto;
 }
 
 #resetButton{
@@ -64,8 +89,22 @@ body{
     justify-content: space-around;
     margin: auto;
     padding: 10px;
-    background-color: yellow;
+    background-color: rgb(0, 0, 0);
+    color: white;
     font-size: 25px;
     font-style: oblique;
-    border: thick rgb(219, 99, 0) solid;
+    border: thick rgb(255, 255, 255) solid;
+    border-radius: 8px;
+    transition-duration: 0.4s;
  }
+
+    #resetButton:hover{
+        background-color:yellow;
+        color: rgb(0, 0, 0);
+    }
+
+    #resetButton:active {
+        background-color: #11d100;
+        box-shadow: 0 8px rgb(0, 0, 0);
+        transform: translateY(4px);
+    }
