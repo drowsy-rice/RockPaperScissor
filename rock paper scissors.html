@@ -8,13 +8,18 @@
   </head>
  
   <body>
+    <audio id="bg_music" controls><source src="rps_sounds/bgmusic.mp3"></audio>
     <div id="starters">
-      <button id="fireButton"></button>
-      <button id="waterButton"></button>
-      <button id="grassButton"></button>
+        <button onclick="playchar()" id="fireButton"></button>
+          <audio id="charizardcry" src="rps_sounds/charizardcry.mp3"></audio>
+        <button onclick="playblast()" id="waterButton"></button>
+          <audio id="blastoisecry" src="rps_sounds/blastoisecry.mp3"></audio>
+        <button onclick="playvena()" id="grassButton"></button>
+          <audio id="venasaurcry" src="rps_sounds/venasaur.mp3"></audio>
     </div>
     <div id="scores"></div>
     <div id="messages">Team Rocket Grunt challenges you to a Pokemon battle!</div>
-    <button id="resetButton">New Battle!</button>
+    <button onclick="playselect()" id="resetButton">New Battle!</button>
+          <audio id="select" src="rps_sounds/selectionsound.mp3"></audio>
   </body>
 </html>

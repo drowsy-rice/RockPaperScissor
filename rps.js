@@ -1,3 +1,8 @@
+let playchar = function(){document.querySelector("#charizardcry").play()}
+let playblast = function(){document.querySelector("#blastoisecry").play()}
+let playvena = function(){document.querySelector("#venasaurcry").play()}
+let playselect = function(){document.querySelector("#select").play()}
+
 const fireButton=document.querySelector('#fireButton');
 fireButton.addEventListener('click',function(){
     let playerSelection="fire";
@@ -52,18 +57,46 @@ let playerScore=5;
 function playRound(playerSelection,computerSelection){
     if (playerSelection==computerSelection && (playerScore && computerScore)>0){
         messages.textContent=("Stop copying me and pick a different Pokemon you twerp!");
+        flash.style.backgroundColor = "yellow";
+        setTimeout(function(){
+            flash.style.backgroundColor = originalColor;
+          }, 1000);
     }else if (playerSelection=="fire" && computerSelection=="water" && (playerScore && computerScore)>0){
-        computerScore--; messages.textContent=("Ha! I win this round! Water beats fire, YOU OAF!");
+        computerScore--; messages.textContent=("Ha! I chose Blastoise! Water beats fire, YOU OAF!");
+        flash.style.backgroundColor = "yellow";
+        setTimeout(function(){
+            flash.style.backgroundColor = originalColor;
+          }, 1000);
     }else if (playerSelection=="fire" && computerSelection=="grass" && (playerScore && computerScore)>0){
-        playerScore--; messages.textContent=("You got lucky that time! Fire beats grass.");
-    }else if (playerSelection=="water" && computerSelection=="rock" && (playerScore && computerScore)>0){
-        playerScore--; messages.textContent=("You won that?? Water beats fire.");
+        playerScore--; messages.textContent=("No fair! My Venasaur's a weakling! You got lucky that time!");
+        flash.style.backgroundColor = "yellow";
+        setTimeout(function(){
+            flash.style.backgroundColor = originalColor;
+          }, 1000);
+    }else if (playerSelection=="water" && computerSelection=="fire" && (playerScore && computerScore)>0){
+        playerScore--; messages.textContent=("You won that?? I must have a defective Charizard or something...");
+        flash.style.backgroundColor = "yellow";
+        setTimeout(function(){
+            flash.style.backgroundColor = originalColor;
+          }, 1000);
     }else if (playerSelection=="water" && computerSelection=="grass" && (playerScore && computerScore)>0){
-        computerScore--; messages.textContent=("Of course you lost that! Grass beats water, FOOL.");
+        computerScore--; messages.textContent=("Of course you lost that! I gave my Venasaur steroids, FOOL!");
+        flash.style.backgroundColor = "yellow";
+        setTimeout(function(){
+            flash.style.backgroundColor = originalColor;
+          }, 1000);
     }else if (playerSelection=="grass" && computerSelection=="fire" && (playerScore && computerScore)>0){
-        computerScore--; messages.textContent=("Don't you know fire beats grass?? GET GUD LOL.");
+        computerScore--; messages.textContent=("Didn't you know my Charizard would kick your grass?? GET GUD LOL.");
+        flash.style.backgroundColor = "yellow";
+        setTimeout(function(){
+            flash.style.backgroundColor = originalColor;
+          }, 1000);
     }else if (playerSelection=="grass" && computerSelection=="water" && (playerScore && computerScore)>0){
-        playerScore--; messages.textContent=("I let you win that! Grass beats water.");
+        playerScore--; messages.textContent=("WHAT? I would've won if I had a Mewtwo instead of this stupid, overgrown turtle.");
+        flash.style.backgroundColor = "yellow";
+        setTimeout(function(){
+            flash.style.backgroundColor = originalColor;
+          }, 1000);
     }
     h1.textContent = `ROCKET GRUNT'S HP: ${computerScore}`;
     h2.textContent = `YOUR HP: ${playerScore}`;
@@ -93,3 +126,9 @@ h2.textContent=`YOUR HP: ${playerScore}`;
 h2.style.border='thick solid green';
 h2.style.backgroundColor='white';
 scores.appendChild(h2);
+
+var flash = document.querySelector("#messages");
+var originalColor = getComputedStyle(flash).backgroundColor; // Store original color (red)
+  // Change color
+// Set a timer to run the passed function after 1000 milliseconds (1 second)
+
