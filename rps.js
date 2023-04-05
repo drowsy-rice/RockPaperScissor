@@ -62,37 +62,37 @@ function playRound(playerSelection,computerSelection){
             flash.style.backgroundColor = originalColor;
           }, 1000);
     }else if (playerSelection=="fire" && computerSelection=="water" && (playerScore && computerScore)>0){
-        computerScore--; messages.textContent=("Ha! I chose Blastoise! Water beats fire, YOU OAF!");
+        playerScore--; messages.textContent=("Ha! I chose Blastoise! Water beats fire, YOU OAF!");
         flash.style.backgroundColor = "yellow";
         setTimeout(function(){
             flash.style.backgroundColor = originalColor;
           }, 1000);
     }else if (playerSelection=="fire" && computerSelection=="grass" && (playerScore && computerScore)>0){
-        playerScore--; messages.textContent=("No fair! My Venasaur's a weakling! You got lucky that time!");
+        computerScore--; messages.textContent=("No fair! My Venasaur's a weakling! You got lucky that time!");
         flash.style.backgroundColor = "yellow";
         setTimeout(function(){
             flash.style.backgroundColor = originalColor;
           }, 1000);
     }else if (playerSelection=="water" && computerSelection=="fire" && (playerScore && computerScore)>0){
-        playerScore--; messages.textContent=("You won that?? I must have a defective Charizard or something...");
+        computerScore--; messages.textContent=("You won that?? I must have a defective Charizard or something...");
         flash.style.backgroundColor = "yellow";
         setTimeout(function(){
             flash.style.backgroundColor = originalColor;
           }, 1000);
     }else if (playerSelection=="water" && computerSelection=="grass" && (playerScore && computerScore)>0){
-        computerScore--; messages.textContent=("Of course you lost that! I gave my Venasaur steroids, FOOL!");
+        playerScore--; messages.textContent=("Of course you lost that! I gave my Venasaur steroids, FOOL!");
         flash.style.backgroundColor = "yellow";
         setTimeout(function(){
             flash.style.backgroundColor = originalColor;
           }, 1000);
     }else if (playerSelection=="grass" && computerSelection=="fire" && (playerScore && computerScore)>0){
-        computerScore--; messages.textContent=("Didn't you know my Charizard would kick your grass?? GET GUD LOL.");
+        playerScore--; messages.textContent=("Didn't you know my Charizard would kick your grass?? GET GUD LOL.");
         flash.style.backgroundColor = "yellow";
         setTimeout(function(){
             flash.style.backgroundColor = originalColor;
           }, 1000);
     }else if (playerSelection=="grass" && computerSelection=="water" && (playerScore && computerScore)>0){
-        playerScore--; messages.textContent=("WHAT? I would've won if I had a Mewtwo instead of this stupid, overgrown turtle.");
+        computerScore--; messages.textContent=("WHAT? I would've won if I had a Mewtwo instead of this stupid, overgrown turtle.");
         flash.style.backgroundColor = "yellow";
         setTimeout(function(){
             flash.style.backgroundColor = originalColor;
